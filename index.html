@@ -15,33 +15,35 @@
     <a href="page3.html" class="btn btn-primary">Pagina 3</a>
 </div>
 <script>
-    document.getElementById('result').innerHTML='We zijn in Nieuwegein ';
+	document.getElementById('result').innerHTML = 'We zijn in Nieuwegein ';
 
-	// Prepare the picker configuration
-	var config = {
-		title: "Select a Fruit",
-		items: [
-			{ text: "Orange", value: "orange" },
-			{ text: "Apple", value: "apple" },
-			{ text: "Watermelon", value: "watermelon" },
-			{ text: "Papaya", value: "papaya" },
-			{ text: "Banana", value: "banana" },
-			{ text: "Pear", value: "pear" }
-		],
-		selectedValue: "papaya",
-		doneButtonLabel: "Done",
-		cancelButtonLabel: "Cancel"
-	};
+	document.addEventListener('deviceready', function () {
+		// Prepare the picker configuration
+		var config = {
+			title             : "Select a Fruit",
+			items             : [
+				{text : "Orange", value : "orange"},
+				{text : "Apple", value : "apple"},
+				{text : "Watermelon", value : "watermelon"},
+				{text : "Papaya", value : "papaya"},
+				{text : "Banana", value : "banana"},
+				{text : "Pear", value : "pear"}
+			],
+			selectedValue     : "papaya",
+			doneButtonLabel   : "Done",
+			cancelButtonLabel : "Cancel"
+		};
 
-	// Show the picker
-	window.plugins.listpicker.showPicker(config,
-		function(item) {
-			alert("You have selected " + item);
-		},
-		function() {
-			alert("You have cancelled");
-		}
-	);
+		// Show the picker
+		window.plugins.listpicker.showPicker(config,
+			function (item) {
+				alert("You have selected " + item);
+			},
+			function () {
+				alert("You have cancelled");
+			}
+		);
+	})
 </script>
 </body>
 </html>
