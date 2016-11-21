@@ -20,4 +20,8 @@
     <splash src="splash.png" />
 
     <icon src="icon.png" />
+
+    <preference name="orientation" value="landscape" />
+
+
 </widget>
