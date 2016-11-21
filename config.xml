@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.kassenaar.DemoPhoneGap"
+        versionCode = "10"
+        version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Peter's Demo App</name>
+
+    <description>
+        Een demo app voor de cursus PhoneGap
+    </description>
+
+    <author href="https://kassenaar.com" email="info@kassenaar.com">
+        Peter Kassenaar
+    </author>
+
+    <splash src="splash.png" />
+
+    <icon src="icon.png" />
+</widget>
