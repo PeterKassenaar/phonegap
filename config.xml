@@ -10,7 +10,7 @@
     <name>Peter's Demo App</name>
 
     <description>
-        Een demo app voor de cursus PhoneGap
+        Een demo app bij PhoneGap Build voor de cursus PhoneGap
     </description>
 
     <author href="https://kassenaar.com" email="info@kassenaar.com">
@@ -23,5 +23,6 @@
 
     <preference name="orientation" value="landscape" />
 
+    <gap:plugin name="cordova-plugin-listpicker" source="npm" />
 
 </widget>
