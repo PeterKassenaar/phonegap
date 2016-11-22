@@ -16,9 +16,14 @@
     <h3>Je werkt op een: <span id="deviceinfo"></span></h3>
     <h3>Netwerk informatie: <span id="network"></span></h3>
 </div>
-<script src="phonegap.js"></script>
+<script src="cordova.js"></script>
 <script>
 	document.getElementById('result').innerHTML = 'We zijn in Nieuwegein ';
+	document.addEventListener("deviceready", onDeviceReady, false);
+	function onDeviceReady() {
+		console.log(device.cordova);
+		document.getElementById('deviceinfo').innerHTML = device.platform;
+	}
 </script>
 
 <script>
