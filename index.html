@@ -13,17 +13,39 @@
         <img src="img/dog.jpg" class="img-responsive"/></p>
     <a href="page2.html" class="btn btn-primary">Pagina 2</a>
     <a href="page3.html" class="btn btn-primary">Pagina 3</a>
+    <h3>Je werkt op een: <span id="deviceinfo"></span></h3>
+    <h3>Netwerk informatie: <span id="network"></span></h3>
 </div>
+<script src="cordova.js"></script>
 <script>
 	document.getElementById('result').innerHTML = 'We zijn in Nieuwegein ';
 </script>
 
 <script>
 
+
+	function checkConnection() {
+		var networkState = navigator.connection.type;
+
+		var states = {};
+		states[Connection.UNKNOWN]  = 'Unknown connection';
+		states[Connection.ETHERNET] = 'Ethernet connection';
+		states[Connection.WIFI]     = 'WiFi connection';
+		states[Connection.CELL_2G]  = 'Cell 2G connection';
+		states[Connection.CELL_3G]  = 'Cell 3G connection';
+		states[Connection.CELL_4G]  = 'Cell 4G connection';
+		states[Connection.CELL]     = 'Cell generic connection';
+		states[Connection.NONE]     = 'No network connection';
+
+		return states[networkState];
+	}
+
+	checkConnection();
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
 		console.log(device.cordova);
 		document.getElementById('deviceinfo').innerHTML = device.platform;
+		document.getElementById('network').innerHTML = checkConnection();
 	}
 </script>
 </body>
