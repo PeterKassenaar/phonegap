@@ -9,6 +9,37 @@
 <div class="container">
     <h2>Dit is pagina 2!</h2>
 
-    <a href="index.html" class="btn btn-success">Go Home!</a></div>
+    <a href="index.html" class="btn btn-success">Go Home!</a>
+    <button class="btn btn-success" id="btnCamera">Camera</button>
+    <img src="" id="imgCamera" width="90%" alt="">
+</div>
+<script src="cordova.js"></script>
+<script>
+	document.addEventListener("deviceready", onDeviceReady);
+
+	function onDeviceReady() {
+		document.getElementById('btnCamera').addEventListener('click', getPhoto)
+
+		var cameraOptions = {
+			quality         : 25,
+			destinationType : Camera.DestinationType.DATA_URL
+		};
+
+		function getPhoto() {
+			navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);
+		}
+
+		function cameraSuccess(photoData) {
+			var image = document.getElementById('imgCamera');
+			image.src = "data:image/jpeg;base64," + photoData;
+		}
+
+		function cameraError(err) {
+			alert('FOUT: ' + err)
+		}
+
+	}
+
+</script>
 </body>
 </html>
