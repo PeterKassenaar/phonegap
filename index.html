@@ -17,5 +17,14 @@
 <script>
 	document.getElementById('result').innerHTML = 'We zijn in Nieuwegein ';
 </script>
+
+<script>
+
+	document.addEventListener("deviceready", onDeviceReady, false);
+	function onDeviceReady() {
+		console.log(device.cordova);
+		document.getElementById('deviceinfo').innerHTML = device.platform;
+	}
+</script>
 </body>
 </html>
