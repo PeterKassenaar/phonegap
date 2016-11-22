@@ -5,9 +5,9 @@
     <title>Pagina 3</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <style>
-        body{
-            background-color: #1b6d85;
-            color: white;
+        body {
+            background-color : #2ac0e4;
+            color            : white;
         }
 
     </style>
@@ -17,5 +17,14 @@
     <h2>Dit is pagina 3!</h2>
 
     <a href="index.html" class="btn btn-success">Go Home!</a></div>
+    <h3>Je werkt op een: <span id="deviceinfo"></span></h3>
+<script>
+
+	document.addEventListener("deviceready", onDeviceReady, false);
+	function onDeviceReady() {
+		console.log(device.cordova);
+		document.getElementById('deviceinfo').innerHTML = device.platform;
+	}
+</script>
 </body>
 </html>
