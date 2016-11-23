@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
     <meta charset="UTF-8">
     <title>PhoneGap applicatie</title>
     <link rel="stylesheet" href="bootstrap.min.css">
@@ -9,48 +13,43 @@
 <div class="container">
     <h1>Welkom bij PhoneGap</h1>
     <h2 id="result"></h2>
+    <h3>Apparaatinformatie</h3>
+    <h3>Je werkt op een: <span id="deviceinfo"></span></h3>
     <p>
         <img src="img/dog.jpg" class="img-responsive"/></p>
-    <a href="page2.html" class="btn btn-primary">Pagina 2</a>
-    <a href="page3.html" class="btn btn-primary">Pagina 3</a>
-    <h3>Je werkt op een: <span id="deviceinfo"></span></h3>
-    <h3>Netwerk informatie: <span id="network"></span></h3>
+    <a href="page2.html" class="btn btn-primary">Pagina 2 (Camera)</a>
+    <a href="page3.html" class="btn btn-primary">Pagina 3 (Audio)</a>
+    <a href="page4.html" class="btn btn-primary">Pagina 4 (Movies)</a>
 </div>
 <script src="cordova.js"></script>
 <script>
 	document.getElementById('result').innerHTML = 'We zijn in Nieuwegein ';
+
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
-		console.log(device.cordova);
-		document.getElementById('deviceinfo').innerHTML = device.platform;
-	}
-</script>
+		function checkConnection() {
+			var networkState = navigator.connection.type;
 
-<script>
+			var states = {};
+			states[Connection.UNKNOWN]  = 'Unknown connection';
+			states[Connection.ETHERNET] = 'Ethernet connection';
+			states[Connection.WIFI]     = 'WiFi connection';
+			states[Connection.CELL_2G]  = 'Cell 2G connection';
+			states[Connection.CELL_3G]  = 'Cell 3G connection';
+			states[Connection.CELL_4G]  = 'Cell 4G connection';
+			states[Connection.CELL]     = 'Cell generic connection';
+			states[Connection.NONE]     = 'No network connection';
 
+			return states[networkState];
+		}
 
-	function checkConnection() {
-		var networkState = navigator.connection.type;
-
-		var states = {};
-		states[Connection.UNKNOWN]  = 'Unknown connection';
-		states[Connection.ETHERNET] = 'Ethernet connection';
-		states[Connection.WIFI]     = 'WiFi connection';
-		states[Connection.CELL_2G]  = 'Cell 2G connection';
-		states[Connection.CELL_3G]  = 'Cell 3G connection';
-		states[Connection.CELL_4G]  = 'Cell 4G connection';
-		states[Connection.CELL]     = 'Cell generic connection';
-		states[Connection.NONE]     = 'No network connection';
-
-		return states[networkState];
-	}
-
-	checkConnection();
-	document.addEventListener("deviceready", onDeviceReady, false);
-	function onDeviceReady() {
-		console.log(device.cordova);
-		document.getElementById('deviceinfo').innerHTML = device.platform;
-		document.getElementById('network').innerHTML = checkConnection();
+		checkConnection();
+		document.addEventListener("deviceready", onDeviceReady, false);
+		function onDeviceReady() {
+			console.log(device.cordova);
+			document.getElementById('deviceinfo').innerHTML = device.platform;
+//			document.getElementById('network').innerHTML = checkConnection();
+		}
 	}
 </script>
 </body>
