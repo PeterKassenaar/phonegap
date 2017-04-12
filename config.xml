@@ -21,8 +21,15 @@
 
     <icon src="icon.png" />
 
-    <preference name="phonegap-version" value="3.7.0" />
-
+    <!-- all platforms -->
+    <preference name="phonegap-version" value="cli-6.0.0" />
     <preference name="orientation" value="portrait" />
+    <preference name="fullscreen" value="true" />
 
+
+    <!-- Android only -->
+    <preference name="android-minSdkVersion" value="10" />
+    <preference name="android-maxSdkVersion" value="15" />
+    <preference name="android-targetSdkVersion" value="12" />
+    <preference name="android-installLocation" value="auto" />
 </widget>
