@@ -3,35 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
         /*Dit is de klasse cursief*/
-        .hoofdkop{
-             font-style: italic;
-             font-family: Helvetica;
-             font-size: 24px;
-             color: #FFFFFF;
-             background-color: #4B946A;
-         }
-        .hoofdkop2{
-            font-style: italic;
-            font-family: Helvetica;
-            font-size: 24px;
-            color: #FFFFFF;
-            background-color: #ec2e92;
+        .hoofdkop {
+            font-style       : italic;
+            font-family      : Helvetica;
+            font-size        : 24px;
+            color            : #FFFFFF;
+            background-color : #4B946A;
+        }
+
+        .hoofdkop2 {
+            font-style       : italic;
+            font-family      : Helvetica;
+            font-size        : 24px;
+            color            : #FFFFFF;
+            background-color : #ec2e92;
         }
 
         /*Elke afbeelding is maximaal 100% breed*/
-        img{
-            max-width: 100%;
+        img {
+            max-width : 100%;
         }
 
     </style>
-    <!--Vanaf hier is het JavaScript / Programmeren -->
-
-
-
 </head>
 <body>
 <!--Dit is het hoofdmenu : dit staat in een LIJST -->
@@ -64,37 +62,37 @@
 <!--Dit zijn kopteksten -->
 <h1>Smurfs page</h1>
 <h2 class="hoofdkop2">Dit is een kleinere koptekst</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem doloribus ipsam quis reiciendis unde? Aliquid assumenda atque autem culpa dicta eos est iste, iure laborum neque nostrum praesentium, quidem veritatis?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem doloribus ipsam quis reiciendis unde? Aliquid
+    assumenda atque autem culpa dicta eos est iste, iure laborum neque nostrum praesentium, quidem veritatis?</p>
 <h3 class="hoofdkop">Nog iets kleiner</h3>
 <!--Dit is paragraaf tekst -->
 <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur doloremque eos ipsa itaque laborum odio quos recusandae! Aspernatur commodi, distinctio dolorem eum nostrum optio quae quia quis, reiciendis similique tempore!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur doloremque eos ipsa itaque laborum odio quos
+    recusandae! Aspernatur commodi, distinctio dolorem eum nostrum optio quae quia quis, reiciendis similique tempore!
 </p>
 
 <!--Een afbeelding in de pagina -->
-<img src="img/porsche.jpg" />
+<img src="img/porsche.jpg"/>
 
- <!--Structuurelement: een hyperlink-->
+<!--Structuurelement: een hyperlink-->
 <a href="index.html">Home</a>
 
 
-
+<!--Vanaf hier is het JavaScript / Programmeren -->
 <script type="text/javascript" src="cordova.js"></script>
-<script src="js/smurfs.js"></script>
 <script>
 
-    // Dit is een functie om de naam in een alert-box te tonen
+	// Dit is een functie om de naam in een alert-box te tonen
 	function showName() {
 		var name = document.getElementById('txtName').value;
-		alert ('Hello ' + name);
+		alert('Hello ' + name);
 	}
 
 	// Dit is de functie om de knop te selecteren en
-    // te luisteren naar het event 'click'
+	// te luisteren naar het event 'click'
 	document
-        .getElementById('btnShowName')
-        .addEventListener('click', showName)
-
+		.getElementById('btnShowName')
+		.addEventListener('click', showName)
 
 </script>
 </body>
