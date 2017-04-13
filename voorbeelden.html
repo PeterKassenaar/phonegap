@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /*Dit is de klasse cursief*/
+        .hoofdkop{
+             font-style: italic;
+             font-family: Helvetica;
+             font-size: 24px;
+             color: #FFFFFF;
+             background-color: #4B946A;
+         }
+        .hoofdkop2{
+            font-style: italic;
+            font-family: Helvetica;
+            font-size: 24px;
+            color: #FFFFFF;
+            background-color: #ec2e92;
+        }
+
+        /*Elke afbeelding is maximaal 100% breed*/
+        img{
+            max-width: 100%;
+        }
+
+    </style>
+    <!--Vanaf hier is het JavaScript / Programmeren -->
+
+
+
+</head>
+<body>
+<!--Dit is het hoofdmenu : dit staat in een LIJST -->
+<ul>
+    <!--Dit zijn de items in de lijst, met <li></li>-->
+    <li class="btn btn-primary">Home</li>
+    <li class="btn btn-primary">About</li>
+    <li class="btn btn-primary" id="btnShowName">Show Name</li>
+    <li class="btn btn-primary">Products</li>
+</ul>
+
+<!--Maak een tekstvak om de naam in te vullen-->
+<input type="text"
+       class="input-lg"
+       id="txtName"
+       placeholder="Typ je naam">
+
+<!--Een <div></div> is een leeg element daT ALLEEN een stukje structuur aangeeft-->
+<!--Het zet de tussenliggende inhoud in een blok-->
+<div>Dit is een div</div>
+<div>Dit is een div</div>
+
+<!--Ook een <span></span> is een leeg element dat ALLEEN structuur aangeeft-->
+<!--Maar de inhoud wordt in een REGEL gezet (niet in een blok)-->
+<span>Dit is een span in een regel.</span>
+<span>Dit is een span in een regel.</span>
+<span>Dit is een span in een regel.</span>
+<span>Dit is een span in een regel.</span>
+
+<!--Dit zijn kopteksten -->
+<h1>Smurfs page</h1>
+<h2 class="hoofdkop2">Dit is een kleinere koptekst</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem doloribus ipsam quis reiciendis unde? Aliquid assumenda atque autem culpa dicta eos est iste, iure laborum neque nostrum praesentium, quidem veritatis?</p>
+<h3 class="hoofdkop">Nog iets kleiner</h3>
+<!--Dit is paragraaf tekst -->
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur doloremque eos ipsa itaque laborum odio quos recusandae! Aspernatur commodi, distinctio dolorem eum nostrum optio quae quia quis, reiciendis similique tempore!
+</p>
+
+<!--Een afbeelding in de pagina -->
+<img src="img/porsche.jpg" />
+
+ <!--Structuurelement: een hyperlink-->
+<a href="index.html">Home</a>
+
+
+
+<script type="text/javascript" src="cordova.js"></script>
+<script src="js/smurfs.js"></script>
+<script>
+
+    // Dit is een functie om de naam in een alert-box te tonen
+	function showName() {
+		var name = document.getElementById('txtName').value;
+		alert ('Hello ' + name);
+	}
+
+	// Dit is de functie om de knop te selecteren en
+    // te luisteren naar het event 'click'
+	document
+        .getElementById('btnShowName')
+        .addEventListener('click', showName)
+
+
+</script>
+</body>
+</html>
