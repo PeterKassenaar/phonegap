@@ -21,6 +21,9 @@
 
     <icon src="icon.png" />
 
+    <!--Plugins-->
+    <plugin name="cordova-plugin-device" spec="~1.1.5" />
+
     <!-- all platforms -->
     <preference name="phonegap-version" value="cli-6.0.0" />
     <preference name="orientation" value="portrait" />
