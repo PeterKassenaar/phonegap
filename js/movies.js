@@ -24,6 +24,15 @@ function deviceReady() {
 			function movieSuccess(movieData) {
 				// 5a. checken of movies goed zijn teruggegeven
 				console.log(movieData);
+
+				// TEST: zijn er wel movies gevonden?
+				// Zo nee: toon foutmelding en spring uit de functie.
+				if(movieData.Response === 'False'){
+					alert('Geen movies gevonden!');
+					return;
+				}
+
+				// Ja, er zijn movies.
 				$('#listMovies').empty();
 				//  5b. In een lus over alle movies heen lopen en
 				// de movie resultaten binden aan de lijst.
@@ -45,6 +54,10 @@ function deviceReady() {
 				alert('FOUT! Er is helaas iets foutgegaan')
 			}
 
+			// 6. Lijst leegmaken met button Clear
+			$('#btnClear').on('click', function () {
+				$('#listMovies').empty()
+			})
 
 		}
 
